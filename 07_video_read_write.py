@@ -9,6 +9,13 @@ if not video.isOpened():
 width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
+# Create a resizable window
+cv2.namedWindow("Video", cv2.WINDOW_NORMAL)
+
+# Set window size equal to video size
+cv2.resizeWindow("Video", width, height)
+
+
 writer = cv2.VideoWriter(
     "videos/output.mp4",
     cv2.VideoWriter_fourcc(*'mp4v'),
